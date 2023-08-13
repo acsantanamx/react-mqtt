@@ -62,7 +62,7 @@ class Client
         $this->loop = $loop;
         $this->version = $version;
         $this->logger = $logger;
-        $this->connector = new Socket\TcpConnector($loop);
+        $this->connector = new Socket\Connector($loop);
         $this->messageCounter = 1;
         $this->state = self::STATE_INITIATED;
 
