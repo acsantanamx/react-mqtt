@@ -194,7 +194,7 @@ class Client
                 ]);
                 $deferred->resolve($stream);
             } else {
-                $deferred->reject('Subscription ack has wrong packetId');
+                $deferred->reject(new \RuntimeException('Subscription ack has wrong packetId'));
             }
         });
 
@@ -220,7 +220,7 @@ class Client
                 ]);
                 $deferred->resolve($stream);
             } else {
-                $deferred->reject('Subscription ack has wrong packetId');
+                $deferred->reject(new \RuntimeException('Subscription ack has wrong packetId'));
             }
             $deferred->resolve($stream);
         });
@@ -267,7 +267,7 @@ class Client
 
                         $deferred->resolve($stream);
                     } else {
-                        $deferred->reject('PublishReceived ack has wrong packetId');
+                        $deferred->reject(new \RuntimeException('PublishReceived ack has wrong packetId'));
                     }
                 });
             } else {
